@@ -113,8 +113,18 @@
   font: bold 66px/88px pt_serifbold, arial, helvetika, sans-serif;
 }
 
+@keyframes move {
+  from {
+        opacity: 0;
+  }
+  to {
+        opacity: 1;
+  }   
+}
+
 .main__title-text_highlight {
   background: #ecf3ff;
+  animation: move 4s;  
 }
 
 .main__subtitle {
@@ -134,6 +144,16 @@
   text-decoration: none;
   border-radius: 4px;
   transition: opacity 0.5s;
+}
+
+@keyframes glowing {
+  0% { background-color: #0056ec; box-shadow: 0 0 5px #0056ec; }
+  50% { background-color: #191de8; box-shadow: 0 0 20px #191de8; }
+  100% { background-color: #0056ec; box-shadow: 0 0 5px #0056ec; }
+}
+
+.main__button {
+  animation: glowing 1500ms infinite;
 }
 
 .main__button:hover {
@@ -326,13 +346,13 @@
     visibility: hidden;
     top: 0;
     left: -100%;  
-    width: 300px;
+    width: 150px;
     height: 100%;  
     margin: 0;
     padding: 80px 0;  
     list-style: none;  
     background-color: #ffffff;
-    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);  
+    box-shadow: 1px 0px 6px #000(0, 0, 0, .2);  
     transition-duration: .25s;
   }
   
@@ -344,11 +364,11 @@
     font-size: 20px;
     font-weight: 600;  
     text-decoration: none;  
-    transition-duration: .25s;
+    transition-duration: .5s;
   }
   
   .menu__item:hover {
-    background-color: #000000;
+    background-color: #fff;
   }
 
   .main {
